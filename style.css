@@ -417,6 +417,11 @@ section{ scroll-margin-top: 84px; }
 .timeline-cert-arrow{
   width: clamp(34px, 5.45vw, 60px);
   height: auto;
+  transition: transform 0.2s ease;
+}
+
+.timeline-cert:hover .timeline-cert-arrow{
+  transform: translateX(5px);
 }
 
 .timeline-cert-empty{ grid-column: 5; display: block; }
@@ -573,7 +578,7 @@ section{ scroll-margin-top: 84px; }
 .hackathons .fact-card-link{
   display: inline-flex;
   align-items: center;
-  margin-top: auto;
+  align-self: center;
   font-family: var(--font-display);
   font-size: clamp(14px, 1.55vw, 17px);
   font-weight: 500;
@@ -586,6 +591,11 @@ section{ scroll-margin-top: 84px; }
   height: auto;
   vertical-align: middle;
   margin-left: 4px;
+  transition: transform 0.2s ease;
+}
+
+.fact-card-link:hover .fact-card-link-arrow{
+  transform: translateX(5px);
 }
 
 .fact-card-footer{
@@ -594,6 +604,7 @@ section{ scroll-margin-top: 84px; }
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 16px;
+  min-height: clamp(58px, 6.36vw, 65px);
   margin-top: auto;
   padding-top: 16px;
   border-top: 1px solid rgba(16,16,24,0.1);
@@ -642,12 +653,12 @@ section{ scroll-margin-top: 84px; }
   display: flex;
   align-items: center;
   gap: clamp(14px, 2.18vw, 24px);
-  margin-bottom: clamp(24px, 3.64vw, 40px);
+  margin-bottom: clamp(32px, 5.09vw, 56px);
 }
 
 .blobbi-logo{
   flex-shrink: 0;
-  width: clamp(40px, 5.82vw, 64px);
+  width: clamp(34px, 5.09vw, 56px);
   height: auto;
 }
 
@@ -671,8 +682,8 @@ section{ scroll-margin-top: 84px; }
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: clamp(16px, 2.91vw, 32px);
-  margin-bottom: clamp(24px, 4.36vw, 48px);
+  gap: clamp(20px, 3.64vw, 40px);
+  margin-bottom: clamp(32px, 5.82vw, 64px);
 }
 
 .blobbi-intro p{
@@ -688,23 +699,41 @@ section{ scroll-margin-top: 84px; }
   flex-shrink: 0;
   display: flex;
   gap: clamp(10px, 1.45vw, 16px);
+  margin-right: clamp(40px, 7.27vw, 80px);
 }
 
 .blobbi-moods-cloud{
-  width: clamp(80px, 11.64vw, 128px);
+  width: clamp(96px, 13.64vw, 150px);
   height: auto;
+  animation: cloud-float 6s ease-in-out infinite;
+}
+
+@keyframes cloud-float{
+  0%, 100%{ transform: translateY(0); }
+  50%{ transform: translateY(-10px); }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .blobbi-moods-cloud{ animation: none; }
 }
 
 .blobbi-row{
   display: grid;
   grid-template-columns: 1.3fr 1fr;
   align-items: start;
-  gap: clamp(20px, 3.64vw, 40px);
-  margin-bottom: clamp(24px, 3.64vw, 40px);
+  gap: clamp(24px, 4.36vw, 48px);
+  margin-bottom: clamp(32px, 5.09vw, 56px);
+}
+
+.blobbi-shot-col{
+  display: flex;
+  flex-direction: column;
+  gap: clamp(32px, 4.36vw, 48px);
 }
 
 .blobbi-shot{
   width: 100%;
+  max-width: 92%;
   height: auto;
   display: block;
 }
@@ -713,10 +742,10 @@ section{ scroll-margin-top: 84px; }
   background: var(--color-card);
   border: 1px solid var(--color-card-border);
   border-radius: var(--radius-lg);
-  padding: clamp(18px, 2.91vw, 32px);
+  padding: clamp(22px, 3.45vw, 40px);
   display: flex;
   flex-direction: column;
-  gap: clamp(14px, 2.18vw, 24px);
+  gap: clamp(18px, 2.55vw, 28px);
 }
 
 .blobbi-card-label{
@@ -737,10 +766,11 @@ section{ scroll-margin-top: 84px; }
 
 .blobbi-stack{
   font-family: var(--font-display);
-  font-weight: 700;
-  font-size: clamp(15px, 1.64vw, 18px);
+  font-weight: 400;
+  font-size: clamp(16px, 1.91vw, 21px);
   color: var(--color-accent);
-  margin: 0 0 clamp(16px, 2.18vw, 24px);
+  text-align: center;
+  margin: 0 0 clamp(24px, 3.64vw, 40px);
 }
 
 .blobbi-code-btn{
@@ -766,13 +796,26 @@ section{ scroll-margin-top: 84px; }
   height: auto;
 }
 
-.blobbi-row--dashboard{ grid-template-columns: 1fr 1.35fr; align-items: center; }
+.blobbi-row--dashboard{ grid-template-columns: 1.5fr 1fr; align-items: center; }
+
+.blobbi-row--dashboard .blobbi-shot{
+  width: 140%;
+  max-width: 140%;
+  margin-left: clamp(-150px, -18.18vw, -85px);
+  margin-top: clamp(64px, 8.73vw, 96px);
+}
+
+@media (max-width: 900px){
+  .blobbi-dashboard-text h4,
+  .blobbi-bullets li{ white-space: normal; }
+}
 
 .blobbi-dashboard-text h4{
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: clamp(18px, 2.36vw, 26px);
-  margin: 0 0 clamp(14px, 2.18vw, 24px);
+  font-size: clamp(16px, 2.09vw, 23px);
+  white-space: nowrap;
+  margin: 0 0 clamp(18px, 2.91vw, 32px);
 }
 
 .blobbi-bullets{
@@ -781,7 +824,7 @@ section{ scroll-margin-top: 84px; }
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: clamp(10px, 1.64vw, 18px);
+  gap: clamp(14px, 2vw, 22px);
 }
 
 .blobbi-bullets li{
@@ -790,7 +833,8 @@ section{ scroll-margin-top: 84px; }
   gap: 12px;
   font-family: var(--font-display);
   font-weight: 400;
-  font-size: clamp(15px, 1.82vw, 20px);
+  font-size: clamp(13px, 1.55vw, 17px);
+  white-space: nowrap;
   color: var(--color-text);
 }
 
@@ -803,35 +847,95 @@ section{ scroll-margin-top: 84px; }
 /* ===================== Projects / Koyash ===================== */
 .koyash{ margin-top: clamp(130px, 21.82vw, 240px); }
 
-.koyash-row{
+.koyash-grid{
   display: grid;
-  grid-template-columns: 1fr 1.3fr;
-  align-items: center;
-  gap: clamp(20px, 3.64vw, 40px);
-  margin-bottom: clamp(24px, 3.64vw, 40px);
+  grid-template-columns: 1fr 1.05fr;
+  align-items: start;
+  gap: clamp(24px, 3.64vw, 40px);
+}
+
+.koyash-col{
+  display: flex;
+  flex-direction: column;
+  gap: clamp(24px, 3.64vw, 40px);
 }
 
 .koyash-intro{
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  align-items: flex-start;
   gap: clamp(14px, 2.18vw, 24px);
 }
 
 .koyash-logo{
-  width: clamp(150px, 18.91vw, 208px);
+  width: clamp(130px, 16.36vw, 180px);
   height: auto;
 }
 
-.koyash-tagline{
+.koyash-description{
   font-family: var(--font-display);
   font-weight: 400;
   font-size: clamp(16px, 1.82vw, 20px);
+  line-height: 1.4;
   color: var(--color-text);
-  max-width: 30ch;
   margin: 0;
 }
+
+.koyash-routine{
+  display: flex;
+  flex-direction: column;
+  gap: clamp(14px, 2.18vw, 24px);
+}
+
+.koyash-routine p{
+  font-family: var(--font-alt);
+  font-weight: 400;
+  font-size: clamp(14px, 1.45vw, 16px);
+  line-height: 1.5;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.koyash-role{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.koyash-role-label{
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(15px, 1.73vw, 19px);
+  color: var(--color-accent);
+  margin: 0;
+}
+
+.koyash-role p:not(.koyash-role-label){
+  font-family: var(--font-alt);
+  font-weight: 400;
+  font-size: clamp(14px, 1.45vw, 16px);
+  line-height: 1.5;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.koyash-actions{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: clamp(16px, 2.36vw, 26px);
+  margin-top: clamp(28px, 4vw, 44px);
+}
+
+.koyash-actions .blobbi-code-btn{ margin-bottom: 0; }
+
+.koyash-actions .koyash-btn{
+  font-size: clamp(17px, 2vw, 22px);
+  padding: clamp(14px, 1.82vw, 20px) clamp(20px, 2.91vw, 32px);
+  border-radius: var(--radius-lg);
+}
+
+.koyash-actions .koyash-btn .koyash-btn-arrow{ width: clamp(22px, 2.55vw, 28px); }
 
 .koyash .blobbi-card{
   background: rgba(255, 253, 138, 0.36);
@@ -858,25 +962,28 @@ section{ scroll-margin-top: 84px; }
   text-align: center;
 }
 
-.blobbi > .koyash-btn{
-  margin-top: clamp(20px, 2.91vw, 32px);
+.blobbi-btn-stack{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: clamp(16px, 2.36vw, 26px);
+  margin-top: clamp(28px, 4vw, 44px);
+}
+
+.blobbi-btn-stack .blobbi-code-btn{ margin-bottom: 0; }
+
+.blobbi-btn-stack .koyash-btn{
   font-size: clamp(17px, 2vw, 22px);
   padding: clamp(14px, 1.82vw, 20px) clamp(20px, 2.91vw, 32px);
   border-radius: var(--radius-lg);
 }
 
-.blobbi > .koyash-btn .koyash-btn-arrow{ width: clamp(22px, 2.55vw, 28px); }
+.blobbi-btn-stack .koyash-btn .koyash-btn-arrow{ width: clamp(22px, 2.55vw, 28px); }
 
 .koyash-btn-arrow{
   width: clamp(16px, 1.82vw, 20px);
   height: auto;
-}
-
-.koyash-media{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: clamp(16px, 2.18vw, 24px);
 }
 
 /* ===================== Projects / Электронный учебник ===================== */
@@ -911,8 +1018,8 @@ section{ scroll-margin-top: 84px; }
 }
 
 .etextbook-card{
-  background: rgba(255, 182, 205, 0.35);
-  border-color: #ff8fab;
+  background: rgba(97, 97, 247, 0.15);
+  border-color: #6161f7;
 }
 
 .etextbook-actions{
@@ -926,8 +1033,8 @@ section{ scroll-margin-top: 84px; }
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(255, 182, 205, 0.35);
-  border: 1px solid #ff8fab;
+  background: rgba(97, 97, 247, 0.15);
+  border: 1px solid #6161f7;
   color: var(--color-accent);
   font-family: var(--font-display);
   font-weight: 600;
@@ -990,19 +1097,6 @@ section{ scroll-margin-top: 84px; }
   gap: clamp(16px, 2.18vw, 24px);
 }
 
-.mini-card-row{
-  display: grid;
-  grid-template-columns: 1.3fr 1fr;
-  align-items: start;
-  gap: clamp(16px, 2.18vw, 24px);
-}
-
-.mini-card-main{
-  display: flex;
-  flex-direction: column;
-  gap: clamp(10px, 1.45vw, 16px);
-}
-
 .mini-card--wordle{
   background: linear-gradient(180deg, #efeeff 0%, #d9d3fb 100%);
   border-color: #cdc3f6;
@@ -1033,34 +1127,24 @@ section{ scroll-margin-top: 84px; }
   margin: 0;
 }
 
-.mini-card-stack-label{
-  font-family: var(--font-display);
-  font-weight: 700;
-  color: var(--color-accent);
-  font-size: clamp(16px, 1.82vw, 20px);
-  margin: 8px 0 0;
-}
-
-.mini-card-stack{
-  font-family: var(--font-body);
-  font-size: clamp(14px, 1.45vw, 16px);
-  color: var(--color-text);
-  margin: 0;
-}
-
 .mini-shot{
+  align-self: center;
   width: 100%;
+  max-width: 220px;
   height: auto;
   margin: 0;
 }
+
+.mini-card--saintcity .mini-shot{ max-width: 160px; }
 
 .mini-card-footer{
   margin-top: auto;
   padding-top: clamp(8px, 1.45vw, 16px);
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: clamp(8px, 1.27vw, 14px);
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: clamp(12px, 1.82vw, 20px);
 }
 
 .mini-code-btn{
@@ -1097,6 +1181,11 @@ section{ scroll-margin-top: 84px; }
 .mini-site-link-arrow{
   width: clamp(24px, 3.09vw, 34px);
   height: auto;
+  transition: transform 0.2s ease;
+}
+
+.mini-site-link:hover .mini-site-link-arrow{
+  transform: translateX(5px);
 }
 
 .mini-extra{
@@ -1174,6 +1263,35 @@ section{ scroll-margin-top: 84px; }
   font-size: clamp(14px, 1.64vw, 18px);
   color: var(--color-text);
   margin: 0;
+}
+
+.uni-project-role{
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: clamp(14px, 2.18vw, 24px);
+}
+
+.uni-project-role-icon{
+  flex-shrink: 0;
+  margin-top: 2px;
+  width: clamp(22px, 2.55vw, 28px);
+  height: auto;
+}
+
+.uni-project-role p{
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: clamp(13px, 1.36vw, 15px);
+  line-height: 1.5;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.uni-project-role-label{
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--color-accent);
 }
 
 .uni-project-body{
@@ -1351,13 +1469,49 @@ section{ scroll-margin-top: 84px; }
      tappable at any font size, so it collapses into a hamburger. This
      is a functional fallback, not a visual redesign.
    ===================================================================== */
+@media (max-width: 860px){
+  .hero{
+    flex-direction: column;
+    text-align: center;
+    padding: 48px 20px 64px;
+  }
+  .hero-bg-circle{ width: 220px; top: 4px; right: -70px; }
+  .hero-side-label{ display: none; }
+  .hero-photo-wrap{ width: min(72vw, 340px); flex: 0 0 auto; }
+  .hero-text{ max-width: 90vw; flex: 0 1 auto; }
+  .hero h1{ max-width: none; }
+  .hero-tagline{ margin: 0 auto; }
+
+  .timeline-strip{ display: none; }
+  .timeline-row{
+    grid-template-columns: 1fr;
+    row-gap: 4px;
+    padding: 18px 0;
+    background-image: none !important;
+    border-bottom: 1px solid rgba(16,16,24,0.12);
+  }
+  .timeline-row:last-child{ border-bottom: none; }
+  .timeline-row--now{ padding-top: 18px; }
+  .timeline-year,
+  .timeline-org,
+  .timeline-course,
+  .timeline-substep,
+  .timeline-cert,
+  .timeline-cert-empty,
+  .timeline-gpa{
+    grid-column: 1;
+    margin-left: 0;
+    justify-self: start;
+  }
+  .timeline-cert{ margin-top: 6px; }
+}
+
 @media (max-width: 640px){
   .card-grid--2{ grid-template-columns: 1fr; }
   .blobbi-row{ grid-template-columns: 1fr; }
   .blobbi-intro{ flex-direction: column; }
-  .koyash-row{ grid-template-columns: 1fr; }
+  .koyash-grid{ grid-template-columns: 1fr; }
   .etextbook-row{ grid-template-columns: 1fr; }
-  .mini-card-row{ grid-template-columns: 1fr; }
   .research-row{ flex-direction: column; align-items: flex-start; }
   .uni-project-row{ grid-template-columns: 1fr; }
   .footer-inner{ flex-direction: column; align-items: flex-start; }
@@ -1385,8 +1539,71 @@ section{ scroll-margin-top: 84px; }
   }
 }
 
+/* ===================== Buttons: hover/press feedback ===================== */
+.fact-code-btn,
+.blobbi-code-btn,
+.koyash-btn,
+.etextbook-code-btn,
+.mini-code-btn,
+.uni-link-btn,
+.research-btn{
+  transition: transform 0.18s ease, filter 0.18s ease, box-shadow 0.18s ease;
+}
+
+.fact-code-btn:hover,
+.blobbi-code-btn:hover,
+.koyash-btn:hover,
+.etextbook-code-btn:hover,
+.mini-code-btn:hover,
+.uni-link-btn:hover,
+.research-btn:hover{
+  transform: translateY(-2px) scale(1.03);
+  filter: brightness(1.05);
+  box-shadow: 0 6px 16px rgba(16,16,24,0.12);
+}
+
+.fact-code-btn:active,
+.blobbi-code-btn:active,
+.koyash-btn:active,
+.etextbook-code-btn:active,
+.mini-code-btn:active,
+.uni-link-btn:active,
+.research-btn:active{
+  transform: translateY(0) scale(0.97);
+  filter: brightness(0.97);
+  box-shadow: none;
+}
+
 /* ===================== Motion ===================== */
 @media (prefers-reduced-motion: reduce){
   html{ scroll-behavior: auto; }
   .main-nav{ transition: none; }
+
+  .fact-code-btn,
+  .blobbi-code-btn,
+  .koyash-btn,
+  .etextbook-code-btn,
+  .mini-code-btn,
+  .uni-link-btn,
+  .research-btn,
+  .timeline-cert-arrow,
+  .fact-card-link-arrow,
+  .mini-site-link-arrow{
+    transition: none;
+  }
+
+  .fact-code-btn:hover,
+  .blobbi-code-btn:hover,
+  .koyash-btn:hover,
+  .etextbook-code-btn:hover,
+  .mini-code-btn:hover,
+  .uni-link-btn:hover,
+  .research-btn:hover,
+  .timeline-cert:hover .timeline-cert-arrow,
+  .fact-card-link:hover .fact-card-link-arrow,
+  .mini-site-link:hover .mini-site-link-arrow{
+    transform: none;
+    filter: none;
+    box-shadow: none;
+  }
 }

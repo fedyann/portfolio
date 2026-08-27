@@ -189,7 +189,12 @@
           </div>
         </div>
 
-        <a class="fact-card-link" href="https://disk.yandex.ru/i/3MiQD1U6eq61EQ" target="_blank" rel="noopener">сертификат <img class="fact-card-link-arrow" src="assets/images/arrow.png" alt=""></a>
+        <div class="fact-card-footer">
+          <a class="fact-card-link" href="https://disk.yandex.ru/i/3MiQD1U6eq61EQ" target="_blank" rel="noopener">сертификат <img class="fact-card-link-arrow" src="assets/images/arrow.png" alt=""></a>
+          <a class="fact-code-btn" href="https://disk.yandex.ru/i/RD7R2Rl2mrKL9g" target="_blank" rel="noopener noreferrer">
+            <img class="fact-code-btn-arrow" src="assets/images/arrow2.png" alt="">Презентация
+          </a>
+        </div>
       </article>
 
       <!-- Цифровой Прорыв -->
@@ -266,7 +271,10 @@
       </div>
 
       <div class="blobbi-row">
-        <img class="blobbi-shot" src="assets/images/blobbi-screenshot.png" alt="Экран журнала мыслей Blobbi">
+        <div class="blobbi-shot-col">
+          <img class="blobbi-shot" src="assets/images/blobbi-screenshot.png" alt="Экран журнала мыслей Blobbi">
+          <p class="blobbi-stack">FastAPI · PostgreSQL · Docker<br>Compose · Caddy</p>
+        </div>
         <div class="blobbi-card">
           <div class="blobbi-card-item">
             <p class="blobbi-card-label">Проблема:</p>
@@ -283,9 +291,6 @@
         </div>
       </div>
 
-      <p class="blobbi-stack">FastAPI · PostgreSQL · Docker Compose · Caddy</p>
-      <a class="blobbi-code-btn" href="https://github.com/fedyann/se-toolkit-hackathon" target="_blank" rel="noopener"><img class="blobbi-code-btn-arrow" src="assets/images/arrow.png" alt=""><span>Посмотреть код</span></a>
-
       <div class="blobbi-row blobbi-row--dashboard">
         <div class="blobbi-dashboard-text">
           <h4>Сводная панель показывает:</h4>
@@ -299,40 +304,53 @@
         <img class="blobbi-shot" src="assets/images/blobbi-screenshot2.png" alt="Дашборд настроения Blobbi">
       </div>
 
-      <a class="koyash-btn" href="https://se-toolkit-hackathon-production.up.railway.app/" target="_blank" rel="noopener"><img class="koyash-btn-arrow" src="assets/images/arrow2.png" alt="">Посмотреть продукт</a>
+      <div class="blobbi-btn-stack">
+        <a class="koyash-btn" href="https://se-toolkit-hackathon-production.up.railway.app/" target="_blank" rel="noopener"><img class="koyash-btn-arrow" src="assets/images/arrow2.png" alt="">Посмотреть продукт</a>
+        <a class="blobbi-code-btn" href="https://github.com/fedyann/se-toolkit-hackathon" target="_blank" rel="noopener"><img class="blobbi-code-btn-arrow" src="assets/images/arrow.png" alt=""><span>Посмотреть код</span></a>
+      </div>
     </article>
 
     <!-- Koyash -->
     <article class="koyash">
-      <h2 class="section-title">Koyash</h2>
-      <div class="koyash-row">
-        <div class="koyash-intro">
-          <img class="koyash-logo" src="assets/images/koyash-logo.png" alt="Koyash">
-          <p class="koyash-tagline">Сервис персонализированных рекомендаций по уходу за кожей.</p>
-          <a class="koyash-btn" href="https://koyash-production-25e0.up.railway.app" target="_blank" rel="noopener"><img class="koyash-btn-arrow" src="assets/images/arrow2.png" alt="">Посмотреть продукт</a>
-        </div>
-        <img class="blobbi-shot" src="assets/images/koyash-screenshot.png" alt="Главный экран сервиса Koyash">
-      </div>
+      <div class="koyash-grid">
+        <div class="koyash-col koyash-col--left">
+          <div class="koyash-intro">
+            <img class="koyash-logo" src="assets/images/koyash-logo.png" alt="Koyash">
+            <p class="koyash-description">Сервис персонализированных рекомендаций по уходу за кожей. Пользователь отвечает на несколько вопросов о бюджете, аллергиях, этических принципах и типе кожи — а сервис подбирает уходовую рутину и объясняет, почему выбран именно этот продукт.</p>
+          </div>
 
-      <div class="blobbi-row">
-        <div class="koyash-media">
           <img class="blobbi-shot" src="assets/images/koyash2.png" alt="Опрос в сервисе Koyash">
-          <a class="blobbi-code-btn" href="https://github.com/Koyash-team/koyash" target="_blank" rel="noopener"><img class="blobbi-code-btn-arrow" src="assets/images/arrow.png" alt=""><span>Посмотреть код</span></a>
-        </div>
-        <div class="blobbi-card">
-          <div class="blobbi-card-item">
-            <p class="blobbi-card-label">Проблема:</p>
-            <p>Подобрать уход за кожей непросто: нужно одновременно учитывать бюджет, аллергены, этические ограничения и тип кожи — и обычно непонятно, почему конкретный продукт вообще подошёл</p>
+
+          <div class="koyash-routine">
+            <p>Рутина строится из пяти шагов: очищение, тонизирование, сыворотка, увлажнение, SPF.</p>
+            <p>Дополнительно есть личный кабинет: сохранённая рутина, отметка «сработало / не сработало» по каждому продукту, замена продукта и трекер результата на 12 недель.</p>
           </div>
-          <div class="blobbi-card-item">
-            <p class="blobbi-card-label">Решение:</p>
-            <p>Рекомендации собирает алгоритм на основе понятных правил, а не «чёрный ящик»; нейросеть здесь только переформулирует обоснование простыми словами, но никогда не выбирает продукт сама</p>
-          </div>
-          <div class="blobbi-card-item">
-            <p class="blobbi-card-label">Моя роль:</p>
+
+          <div class="koyash-role">
+            <p class="koyash-role-label">Моя роль:</p>
             <p>Дизайн всех экранов и копирайтинг. Задача была нетривиальной: сделать сайт тёплым и уютным «как у бабушки», но при этом научно убедительным — чтобы пользователь доверял рекомендациям и сервис не скатывался в народную медицину</p>
           </div>
         </div>
+
+        <div class="koyash-col koyash-col--right">
+          <img class="blobbi-shot" src="assets/images/koyash-screenshot.png" alt="Главный экран сервиса Koyash">
+
+          <div class="blobbi-card">
+            <div class="blobbi-card-item">
+              <p class="blobbi-card-label">Проблема:</p>
+              <p>Подобрать уход за кожей непросто: нужно одновременно учитывать бюджет, аллергены, этические ограничения (например, отказ от тестов на животных) и тип кожи. Даже если подходящий продукт в итоге находится, редко понятно, почему именно он — большинство сервисов просто выдают список без объяснений, довериться такому выбору сложно.</p>
+            </div>
+            <div class="blobbi-card-item">
+              <p class="blobbi-card-label">Решение:</p>
+              <p>Рекомендацию собирает алгоритм на основе понятных правил, который учитывает эти же критерии — это не «чёрный ящик»: всегда видно, по какой причине выбран конкретный продукт. Нейросеть здесь только переформулирует это обоснование простыми словами, но никогда не выбирает продукт сама.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="koyash-actions">
+        <a class="koyash-btn" href="https://koyash-production-25e0.up.railway.app" target="_blank" rel="noopener"><img class="koyash-btn-arrow" src="assets/images/arrow2.png" alt="">Посмотреть продукт</a>
+        <a class="blobbi-code-btn" href="https://github.com/Koyash-team/koyash" target="_blank" rel="noopener"><img class="blobbi-code-btn-arrow" src="assets/images/arrow.png" alt=""><span>Посмотреть код</span></a>
       </div>
     </article>
 
@@ -364,8 +382,6 @@
             <a class="koyash-btn" href="https://fedyann.github.io/app-for-e-books/" target="_blank" rel="noopener"><img class="koyash-btn-arrow" src="assets/images/arrow2.png" alt="">Посмотреть продукт</a>
             <a class="etextbook-code-btn" href="https://github.com/fedyann/app-for-e-books" target="_blank" rel="noopener"><img class="blobbi-code-btn-arrow" src="assets/images/arrow.png" alt=""><span>Посмотреть код</span></a>
           </div>
-
-          <p class="etextbook-mobile-note"><img class="etextbook-mobile-icon" src="assets/images/ps.svg" alt="">мобильная версия</p>
         </div>
 
         <div class="etextbook-media">
@@ -380,34 +396,22 @@
       <div class="card-grid card-grid--2">
         <div class="mini-card mini-card--wordle">
           <h3 class="mini-card-title">Wordle</h3>
-          <div class="mini-card-row">
-            <div class="mini-card-main">
-              <p class="mini-card-subtitle">Десктопная игра с системой аккаунтов</p>
-              <p class="mini-card-text">Логика угадывания и раскраски букв написана с нуля (с учётом повторяющихся букв), выбор языка и длины слова, статистика по аккаунту, сборка в .exe для Windows без установки Python</p>
-              <p class="mini-card-stack-label">Стек:</p>
-              <p class="mini-card-stack">Python · PyQt5 · SQLite</p>
-              <div class="mini-card-footer">
-                <a class="mini-code-btn" href="https://github.com/fedyann/Wordle" target="_blank" rel="noopener"><img class="mini-code-btn-arrow" src="assets/images/arrow2.png" alt="">Код</a>
-              </div>
-            </div>
-            <img class="mini-shot" src="assets/images/wordle.png" alt="Скриншот игры Wordle">
+          <p class="mini-card-subtitle">Десктопная игра с системой аккаунтов</p>
+          <p class="mini-card-text">Логика угадывания и раскраски букв написана с нуля (с учётом повторяющихся букв), выбор языка и длины слова, статистика по аккаунту, сборка в .exe для Windows без установки Python</p>
+          <img class="mini-shot" src="assets/images/wordle.png" alt="Скриншот игры Wordle">
+          <div class="mini-card-footer">
+            <a class="mini-code-btn" href="https://github.com/fedyann/Wordle" target="_blank" rel="noopener"><img class="mini-code-btn-arrow" src="assets/images/arrow2.png" alt="">Код</a>
           </div>
         </div>
 
         <div class="mini-card mini-card--saintcity">
           <h3 class="mini-card-title">SaintCity</h3>
-          <div class="mini-card-row">
-            <div class="mini-card-main">
-              <p class="mini-card-subtitle">Лендинг сервиса аудиоэкскурсий по Петербургу</p>
-              <p class="mini-card-text">Разработала с нуля: хиро-блок, навигацию по разделам, тарифы и раздел «О нас», подобрала парную гарнитуру с засечками</p>
-              <p class="mini-card-stack-label">Стек:</p>
-              <p class="mini-card-stack">Python · PyQt5 · SQLite</p>
-              <div class="mini-card-footer">
-                <a class="mini-code-btn" href="https://github.com/fedyann/SaintCity2" target="_blank" rel="noopener"><img class="mini-code-btn-arrow" src="assets/images/arrow2.png" alt="">Код</a>
-                <a class="mini-site-link" href="https://fedyann.github.io/SaintCity2/" target="_blank" rel="noopener">сайт <img class="mini-site-link-arrow" src="assets/images/arrow.png" alt=""></a>
-              </div>
-            </div>
-            <img class="mini-shot" src="assets/images/saintcity.png" alt="Скриншот лендинга SaintCity">
+          <p class="mini-card-subtitle">Лендинг сервиса аудиоэкскурсий по Петербургу</p>
+          <p class="mini-card-text">Разработала с нуля: хиро-блок, навигацию по разделам, тарифы и раздел «О нас», подобрала парную гарнитуру с засечками</p>
+          <img class="mini-shot" src="assets/images/saintcity.png" alt="Скриншот лендинга SaintCity">
+          <div class="mini-card-footer">
+            <a class="mini-code-btn" href="https://github.com/fedyann/SaintCity2" target="_blank" rel="noopener"><img class="mini-code-btn-arrow" src="assets/images/arrow2.png" alt="">Код</a>
+            <a class="mini-site-link" href="https://fedyann.github.io/SaintCity2/" target="_blank" rel="noopener">сайт <img class="mini-site-link-arrow" src="assets/images/arrow.png" alt=""></a>
           </div>
         </div>
       </div>
@@ -435,6 +439,10 @@
         <div class="uni-project-main">
           <h3 class="uni-project-name">StudyConnect</h3>
           <p class="uni-project-subject">UX/UI for Startups</p>
+          <div class="uni-project-role">
+            <img class="uni-project-role-icon" src="assets/images/face.png" alt="">
+            <p><span class="uni-project-role-label">Моя роль:</span> составила сценарий интервью, синтезировала результаты в affinity diagram и HMW-темы, сгенерировала и приоритизировала идеи фич по ценности и сложности, спроектировала UI Pattern Library — атомарные и молекулярные компоненты для передачи в разработку.</p>
+          </div>
         </div>
         <div class="uni-project-body">
           <p class="uni-project-text">Приложение для поиска команды по навыкам и доступности, а не по кругу знакомых. Полный цикл: интервью, синтез в темы и HMW, прототип, юзабилити-тесты и итерация флоу по их результатам</p>
@@ -449,6 +457,10 @@
         <div class="uni-project-main">
           <h3 class="uni-project-name">Stay Hydrated</h3>
           <p class="uni-project-subject">Инженерия интеллектуальных систем</p>
+          <div class="uni-project-role">
+            <img class="uni-project-role-icon" src="assets/images/face.png" alt="">
+            <p><span class="uni-project-role-label">Моя роль:</span> оформила итоговую презентацию проекта и построила петли обратной связи для схемы стимулов; датчики веса, EMA-прогноз и механизм анти-обмана прорабатывали вместе в командных обсуждениях.</p>
+          </div>
         </div>
         <div class="uni-project-body">
           <p class="uni-project-text">Система против дефицита воды в кампусе: датчики веса как источник истины, EMA-прогноз вместо ML и схема стимулов, при которой честность выгоднее обмана. Отдельно продумали, как систему будут пытаться обойти — и что с этим делать</p>
@@ -462,6 +474,10 @@
         <div class="uni-project-main">
           <h3 class="uni-project-name">Wonderland</h3>
           <p class="uni-project-subject">Инженерия интеллектуальных систем</p>
+          <div class="uni-project-role">
+            <img class="uni-project-role-icon" src="assets/images/face.png" alt="">
+            <p><span class="uni-project-role-label">Моя роль:</span> оформила финальную презентацию проекта; решение — детектор, отличающий тревогу от интереса, и сценарий вывода пользователя из петли — вырабатывали совместно в командных обсуждениях.</p>
+          </div>
         </div>
         <div class="uni-project-body">
           <p class="uni-project-text">Разбор того, как рекомендательный алгоритм, оптимизирующий время в приложении, начинает продвигать тревожный контент. Предложили детектор, отличающий тревогу от интереса, и вывод пользователя из петли — вместо запретов</p>
